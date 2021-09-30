@@ -13,17 +13,13 @@ public abstract class Conta {
         this.saldo = saldo;
     }
 
-    protected void setSaldo(BigDecimal saldo) {
-        this.saldo = saldo;
-    }
-
     public void depositar(BigDecimal valor) {
         this.saldo = this.saldo.add(valor);
     }
 
     public void sacar(BigDecimal valor) {
         if (this.saldo.subtract(valor).compareTo(BigDecimal.ZERO) < 0)
-            throw new IllegalArgumentException("Não é possível sacar um valor que você não possui animal");
+            throw new IllegalArgumentException("Não é possível sacar um valor que você não possui");
         this.saldo = this.saldo.subtract(valor);
     }
 
@@ -32,8 +28,12 @@ public abstract class Conta {
     }
 
     public BigDecimal getSaldo() {
-        return saldo.setScale(2, RoundingMode.HALF_EVEN);
+        return saldo;
     }
 
-    public abstract void atualizacaoMensal();
+    public void applicatAtualizacaoMensal() {
+        this.saldo = getValorAposAtualizacaoMensal().setScale(2, RoundingMode.HALF_EVEN);
+    }
+
+    protected abstract BigDecimal getValorAposAtualizacaoMensal();
 }

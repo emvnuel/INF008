@@ -9,8 +9,8 @@ public class ContaPoupanca extends Conta {
     }
 
     @Override
-    public void atualizacaoMensal() {
-        this.setSaldo(this.getSaldo().add(this.getSaldo().multiply(new BigDecimal(0.01))));
+    public BigDecimal getValorAposAtualizacaoMensal() {
+        return this.getSaldo().add(this.getSaldo().multiply(new BigDecimal("0.01")));
     }
 
 }

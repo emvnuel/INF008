@@ -9,8 +9,8 @@ public class ContaCorrente extends Conta {
     }
 
     @Override
-    public void atualizacaoMensal() {
-        this.setSaldo(this.getSaldo().subtract(BigDecimal.ONE));
+    public BigDecimal getValorAposAtualizacaoMensal() {
+        return this.getSaldo().subtract(BigDecimal.ONE);
     }
 
 }

@@ -47,7 +47,7 @@ public class Banco {
     }
 
     public void aplicarAtualizacaoMensal() {
-        this.clientes.stream().map(Cliente::getConta).forEach(Conta::atualizacaoMensal);
+        this.clientes.stream().map(Cliente::getConta).forEach(Conta::applicatAtualizacaoMensal);
     }
 
 }
