@@ -28,7 +28,6 @@ public class Main {
 				DayOfWeek.WEDNESDAY, 
 				new Horario(LocalTime.of(20, 20), LocalTime.of(21, 10)));
 		
-		// • Criação e alteração de horários de curso
 		Disciplina disciplina1 = new Disciplina("INF008",
 				"PROG OO", 
 				"PROGRAMAÇÃO ORIENTADA A OBJETOS", 
